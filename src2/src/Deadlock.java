@@ -19,11 +19,11 @@ public class Deadlock extends Thread {
     }
 
     public static void main(String args[])throws Exception{
-        //Deadlock d = new Deadlock();
-        //d.m1();
-        MyThread thread = new MyThread();
+        Deadlock d = new Deadlock();
+        d.m1();
+        /*MyThread thread = new MyThread();
         thread.setDaemon(true); // Set the child thread to daemon
-        thread.start();
+        thread.start();*/
         //The output is uncertain as main finishes execution and the daemon child has to be terminated
         // as per the rule regarding daemon threads.
         System.out.println("Main thread execution finished");
@@ -41,7 +41,6 @@ class A {
     public synchronized void last(){
         System.out.println("Class A 's last() method");
     }
-
 }
 class B {
     public synchronized void d2(A a){
